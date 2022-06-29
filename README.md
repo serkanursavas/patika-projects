@@ -18,6 +18,8 @@ O(n^2) yani O(6^2) = O(36)'dır.
 ## 4 - Case For 18
 - Average Case
 
+
+
 * [7,3,5,8,2,9,4,15,6] dizisinin Insertion Sort'a göre ilk 4 adımını yazınız.
   * [2,3,5,8,7,9,4,15,6]
   * [2,3,5,8,7,9,4,15,6]
