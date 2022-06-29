@@ -47,4 +47,4 @@ O(n^2) yani O(6^2) = O(36)'dır.
 
 # Proje 2 - B Tree
 
-![BTree]()
+![BTree](btree.png)
