@@ -42,4 +42,9 @@ O(n^2) yani O(6^2) = O(36)'dır.
 - [8, 11, 12, 16, 22]
 
 ## Big-O Notation
-O(nLogN)
+- O(nLogN)
+
+
+# Proje 2 - B Tree
+
+![BTree]()
