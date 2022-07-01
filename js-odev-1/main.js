@@ -1,5 +1,4 @@
-let isim;
-// let isim = prompt("Lütfen adınızı giriniz: ");
+let isim = prompt("Lütfen adınızı giriniz: ");
 
 const badi = document.querySelector('body');
 const logo = document.createElement('img');
@@ -31,13 +30,24 @@ logo.style.width = "17%"
 container.prepend(logo);
 
 // ? HOSGELDİN
-merhaba.innerHTML = `Merhaba, ! Hoş Geldin !`;
+merhaba.innerHTML = `Merhaba, <stron>${isim}</stron> Hoş Geldin !`;
 merhaba.style.fontSize = "50px"
 container.append(merhaba);
 
 // ? TARİH
+const gunler = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"];
 tarihDiv.style.fontSize = "60px";
 container.append(tarihDiv);
+function test() {
+    
+    let tarih = new Date();
+    let saat = tarih.getHours();
+    let dakika = tarih.getMinutes();
+    let saniye = tarih.getSeconds();
+    let gun = tarih.getDay();
+    tarihDiv.innerHTML = `Saat: ${saat}:${dakika}:${saniye} ${gunler[gun]}`;
+}
+
 
 // ? ACİKLAMA
 aciklama.innerHTML = `tarihinde <strong>Kodluyoruz Frontend Web Development Patikası</strong>'nın Javascript bölümü 1. Ödevindesiniz`
@@ -45,7 +55,7 @@ aciklama.style.fontSize = "40px";
 aciklama.style.margin = "0 100px";
 container.append(aciklama);
 
-
+setInterval(test, 1000)
 
 
 
