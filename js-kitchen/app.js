@@ -81,3 +81,82 @@ const menu = [
     desc: `Red bean paste dessert, serving with honey.`,
   },
 ];
+
+
+let dizi = menu.map(function (nesne) {
+  return nesne.category
+})
+
+let kategori = [...new Set(dizi)]
+
+const btnContainer = document.querySelector('.btn-container');
+const row = document.querySelector('.row');
+
+
+
+kategori.forEach((sehir) => {
+  if(!btnContainer.firstChild){
+    const btnDOM = document.createElement('button')
+    btnDOM.innerHTML = "All"
+    btnDOM.classList.add('btn-item')
+    btnContainer.appendChild(btnDOM)
+  }
+  const btnDOM = document.createElement('button')
+  btnDOM.innerHTML = sehir
+  btnDOM.classList.add('btn-item')
+  btnContainer.appendChild(btnDOM)
+})
+
+
+let allButton = document.querySelectorAll("button");
+for (let index = 0; index < allButton.length; index++){
+    allButton[index].addEventListener("click",
+    function(){
+        
+      row.innerHTML = ""
+
+      menu.forEach((nesne) =>{
+        if (nesne.category === this.innerHTML) {
+          fillContent(nesne)
+        } else if(this.innerHTML === "All"){
+          fillContent(nesne)
+        }
+      })
+
+    });
+}
+
+function fillContent(nesne) {
+  let item = document.createElement('div')
+  item.classList.add('menu-items')
+  let photo = document.createElement('img')
+  photo.classList.add("photo")
+  photo.src = nesne.img
+  let menuInfo = document.createElement('div')
+  menuInfo.classList.add('menu-info')
+  let menuTitle = document.createElement('div')
+  menuTitle.classList.add('menu-title')
+  let menuText = document.createElement('div')
+  menuText.classList.add('menu-text')
+  menuText.innerHTML = nesne.desc
+  let baslik = document.createElement('h4')
+  baslik.innerHTML = nesne.title
+  let fiyat = document.createElement('h4')
+  fiyat.innerHTML = nesne.price
+
+  row.appendChild(item)
+  item.appendChild(photo)
+  item.appendChild(menuInfo)
+  menuInfo.appendChild(menuTitle)
+  menuInfo.appendChild(menuText)
+  menuTitle.appendChild(baslik)
+  menuTitle.appendChild(fiyat)
+}
+
+menu.map(function (nesne) {
+  fillContent(nesne)
+})
+
+
+  
+

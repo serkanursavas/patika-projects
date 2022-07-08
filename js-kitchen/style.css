@@ -27,15 +27,40 @@ h2 {
 }
 .btn-item {
   margin-left: 15px;
+  border-radius: 6px;
+  font-size: 18px;
+  border: 0.5px solid;
+  color: #212529;
+  padding: 0.375rem 0.75rem;
+  background-color: transparent;
+}
+
+.btn-item:hover {
+  background: #212529;
+  color: #f1f5f8;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn-item:focus {
+  background: #ff6a23;
+  color: #f1f5f8;
+  transition: all 0.2s ease-in-out;
 }
 
 .photo {
-  width: 30%;
+  min-width: 30%;
   height: 175px;
   object-fit: cover;
   border: 0.25rem solid black;
   border-radius: 10px;
 }
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 25px;
+}
+
 .menu-items {
   display: flex;
   margin: 20px 0;
@@ -56,4 +81,13 @@ h4 {
 
 .menu-text {
   padding-top: 20px;
+}
+
+@media (max-width: 1000px) {
+  .row {
+    display: block;
+  }
+  .menu-items {
+    margin: 30px 0;
+  }
 }
