@@ -12,6 +12,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+
     <title>Yapılacaklar Listesi</title>
   </head>
   <body style="padding-top: 20px">
@@ -43,7 +45,7 @@
         aria-live="polite"
         aria-atomic="true"
       >
-        <div class="toast-header bg-warning text-white">
+        <div class="toast-header bg-danger text-white">
           <strong class="me-auto">Hata!</strong>
           <small>şimdi</small>
           <button
@@ -58,29 +60,60 @@
         </div>
       </div>
     </div>
-
     <div class="container" style="max-width: 900px">
-      <div class="header">
+      <div class="header bg-dark" style="border-radius: 15px 15px 0 0">
         <img
           src="https://cdn.sanity.io/images/9kdepi1d/production/65c832d202a503b15d99e628f4313782f3ef50db-300x62.png"
           class="mb-1"
           alt=""
+          style="border-radius: 5px"
         />
-        <h2>Yapılacaklar Listesi</h2>
+
+        <h2 class="m-4">Yapılacaklar Listesi</h2>
         <input type="text" id="task" placeholder="Bugün ne yapacaksın?" />
         <span id="liveToastBtn" class="button">Ekle</span>
       </div>
 
       <ul id="list">
-        <li>3 Litre Su İç</li>
-        <li>Ödevleri Yap</li>
-        <li>En Az 3 Saat Kodlama Yap</li>
-        <li>Yemek Yap</li>
-        <li>50 Sayfa Kitap Oku</li>
+        <!-- <li>
+          3 Litre Su İç
+          <div class="close">
+            <button class="btn-close"></button>
+          </div>
+        </li>
+        <li>
+          Ödevleri Yap
+          <div class="close">
+            <button class="btn-close"></button>
+          </div>
+        </li>
+        <li>
+          En Az 3 Saat Kodlama Yap
+          <div class="close">
+            <button class="btn-close"></button>
+          </div>
+        </li>
+        <li>
+          Yemek Yap
+          <div class="close">
+            <button class="btn-close"></button>
+          </div>
+        </li>
+        <li>
+          50 Sayfa Kitap Oku
+          <div class="close">
+            <button class="btn-close"></button>
+          </div>
+        </li> -->
       </ul>
       <script
         src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
         crossorigin="anonymous"
       ></script>
       <script
@@ -89,6 +122,16 @@
         crossorigin="anonymous"
       ></script>
     </div>
+
+    <script>
+      window.sr = ScrollReveal();
+      sr.reveal("#test", {
+        duration: 3000,
+        origin: "bottom",
+        distance: "600px",
+      });
+    </script>
+
     <script src="main.js"></script>
   </body>
 </html>
