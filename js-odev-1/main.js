@@ -30,7 +30,7 @@ logo.style.width = "17%"
 container.prepend(logo);
 
 // ? HOSGELDİN
-merhaba.innerHTML = `Merhaba, <stron>${isim}</stron> Hoş Geldin !`;
+merhaba.innerHTML = `Merhaba, <strong>${isim}</strong> Hoş Geldin !`;
 merhaba.style.fontSize = "50px"
 container.append(merhaba);
 
